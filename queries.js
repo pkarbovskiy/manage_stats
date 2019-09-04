@@ -1,11 +1,13 @@
-const Pool = require('pg').Pool
-const pool = new Pool({
-    user: '',
-    host: '',
-    database: '',
-    password: '',
-    port: 5432,
-});
+const Pool = require('pg').Pool;
+const fs   = require('fs');
+const yaml = require('js-yaml');
+// Get document, or throw exception on error
+
+const doc = yaml.safeLoad(fs.readFileSync('env.yaml', 'utf8'));
+
+/* const process = require('process');
+process.exit(); */
+const pool = new Pool(doc.database);
 
 const getPlayers = (req, res) => {
     pool
