@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "manage site",
+    "author": "Hu Chen",
+    "version": "1.0.1",
+    "description": "simplify managing site",
+    "icons": {
+        "16": "16.png",
+        "48": "48.png",
+        "128": "128.png"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "declarativeContent",
+        "storage"
+    ]
+}

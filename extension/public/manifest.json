@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "manage site",
+    "author": "Hu Chen",
+    "version": "1.0.1",
+    "description": "simplify managing site",
+    "icons": {
+        "16": "16.png",
+        "48": "48.png",
+        "128": "128.png"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "content_scripts": [
+        {
+          "matches": ["file:///C:/my_projects/streamsnipers/StreamSnipers.html"],
+          "css": ["static/css/content.css"],
+          "js": ["static/js/content.js"]
+        }
+      ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "page_action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "declarativeContent",
+        "storage"
+    ]
+}
